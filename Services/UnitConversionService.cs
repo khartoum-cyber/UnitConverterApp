@@ -25,5 +25,18 @@
                 }
             };
 
+        public double Convert(string category, string fromUnit, string toUnit, double value)
+        {
+            var key = $"{fromUnit.ToLower()}->{toUnit.ToLower()}";
+
+            if (_conversions.TryGetValue(category, out var unitMap) &&
+                unitMap.TryGetValue(key, out var conversionFunc))
+            {
+                return conversionFunc(value);
+            }
+
+            throw new InvalidOperationException($"Conversion from {fromUnit} to {toUnit} in category {category} is not supported.");
+        }
+
     }
 }
