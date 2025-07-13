@@ -1,6 +1,8 @@
-﻿namespace UnitConverterAngular.Services
+﻿using UnitConverterAngular.Services.Interfaces;
+
+namespace UnitConverterAngular.Services
 {
-    public class UnitConversionService
+    public class UnitConversionService : IUnitConversionService
     {
 
         private readonly Dictionary<string, Dictionary<string, Func<double, double>>> _conversions =
