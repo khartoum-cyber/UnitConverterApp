@@ -16,7 +16,18 @@ namespace UnitConverterAngular
                         "ClientApp/dist";
                 });
 
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+
             var app = builder.Build();
+
+            // Enable Swagger only in development (optional)
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
             // Configure the HTTP request pipeline.
 
@@ -33,3 +44,5 @@ namespace UnitConverterAngular
         }
     }
 }
+
+//todo enable swagger
