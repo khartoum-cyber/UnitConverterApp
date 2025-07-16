@@ -30,3 +30,40 @@ User enters: Convert 10 kilometers to miles
 Angular sends: GET /api/convert?from=km&to=mi&value=10
 ASP.NET Core processes the request and returns: 6.21371
 Angular displays: 10 kilometers = 6.21371 miles
+
+___
+
+## 🌐 Project Root Structure
+
+```plaintext
+/UnitConverterApp
+│
+├── /frontend/           # Angular SPA
+│
+└── /backend/            # ASP.NET Core Web API
+```
+___
+
+## ⚙️ Backend (ASP.NET Core Web API)
+
+```plaintext
+/backend/
+│
+├── Controllers/
+│   └── ConversionController.cs
+│
+├── Models/
+│   ├── ConversionRequest.cs
+│   └── ConversionResult.cs
+│
+├── Services/
+│	│  └──Interfaces/
+│	│     └── IUnitConversionService.cs
+│	└── UnitConversionService.cs
+│
+├── Properties/
+│   └── launchSettings.json
+│
+├── Program.cs
+└── UnitConverterAPI.csproj
+```
