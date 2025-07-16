@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UnitConverterAngular.Models;
-using UnitConverterAngular.Services;
+using UnitConverterAngular.Services.Interfaces;
 
 namespace UnitConverterAngular.Controllers
 {
@@ -9,14 +9,14 @@ namespace UnitConverterAngular.Controllers
     [Route("api/[controller]")]
     public class ConversionController : ControllerBase
     {
-        //private readonly UnitConversionService _conversionService;
+        private readonly IUnitConversionService _conversionService;
 
-        //public ConversionController(UnitConversionService conversionService)
-        //{
-        //    _conversionService = conversionService;
-        //}
+        public ConversionController(IUnitConversionService conversionService)
+        {
+            _conversionService = conversionService;
+        }
 
-        private readonly UnitConversionService _conversionService = new UnitConversionService();
+        //private readonly UnitConversionService _conversionService = new UnitConversionService();
 
         [HttpPost]
         public ActionResult<ConversionResult> Convert([FromBody] ConversionRequest request)

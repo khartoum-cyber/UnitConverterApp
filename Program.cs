@@ -1,3 +1,6 @@
+using UnitConverterAngular.Services;
+using UnitConverterAngular.Services.Interfaces;
+
 namespace UnitConverterAngular
 {
     public class Program
@@ -16,9 +19,10 @@ namespace UnitConverterAngular
                         "ClientApp/dist";
                 });
 
+            builder.Services.AddScoped<IUnitConversionService, UnitConversionService>();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
 
             var app = builder.Build();
 
@@ -44,5 +48,4 @@ namespace UnitConverterAngular
         }
     }
 }
-
-//todo enable swagger
+//todo check dependency injection
