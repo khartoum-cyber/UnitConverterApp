@@ -29,10 +29,10 @@ Angular updates the UI with the results.
 ---
 🧱 Example Flow
 
-User enters: Convert 10 kilometers to miles
-Angular sends: GET /api/convert?from=km&to=mi&value=10
-ASP.NET Core processes the request and returns: 6.21371
-Angular displays: 10 kilometers = 6.21371 miles
+- User enters: Convert 10 kilometers to miles
+- Angular sends: GET /api/convert?from=km&to=mi&value=10
+- ASP.NET Core processes the request and returns: 6.21371
+- Angular displays: 10 kilometers = 6.21371 miles
 
 ___
 
