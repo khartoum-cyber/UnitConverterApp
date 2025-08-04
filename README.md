@@ -1,59 +1,72 @@
-# UnitConverterCLientApp
+# UnitConverterApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+✅ Here's how the architecture would look:
 
-## Development server
+🔹 **Frontend (Angular SPA)**
+- Built with Angular (TypeScript, HTML, CSS)
+- Handles:
+  - User interface
+  - Input forms (e.g., value to convert, unit types)
+  - Displaying results
+  - Making HTTP requests to the backend API
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+🔹 **Backend (ASP.NET Core Web API)**
+- Built with ASP.NET Core
+- Handles:
+	- Business logic (e.g., conversion formulas)
+	- Unit definitions and categories (length, weight, temperature, etc.)
+	- API endpoints (e.g., /api/convert?from=kg&to=lb&value=10)
+	- Optional: user authentication, logging, database storage
+---
+🔄 How They Communicate
+
+Angular uses HttpClient to send requests to the ASP.NET Core API.
+The API returns JSON responses with the converted values.
+Angular updates the UI with the results.
+
+---
+🧱 Example Flow
+
+- User enters: Convert 10 kilometers to miles
+- Angular sends: GET /api/convert?from=km&to=mi&value=10
+- ASP.NET Core processes the request and returns: 6.21371
+- Angular displays: 10 kilometers = 6.21371 miles
+
+___
+
+## 🌐 Project Root Structure
+
+```plaintext
+/UnitConverterApp
+│
+├── /frontend/           # Angular SPA
+│
+└── /backend/            # ASP.NET Core Web API
 ```
+___
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## ⚙️ Backend (ASP.NET Core Web API)
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```plaintext
+/backend/
+│
+├── Controllers/
+│   └── ConversionController.cs
+│
+├── Models/
+│   ├── ConversionRequest.cs
+│   └── ConversionResult.cs
+│
+├── Services/
+│	│  └──Interfaces/
+│	│     └── IUnitConversionService.cs
+│	└── UnitConversionService.cs
+│
+├── Properties/
+│   └── launchSettings.json
+│
+├── Program.cs
+└── UnitConverterAPI.csproj
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
