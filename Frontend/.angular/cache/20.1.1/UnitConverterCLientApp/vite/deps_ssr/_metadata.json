@@ -1,0 +1,76 @@
+{
+  "hash": "4054bcab",
+  "configHash": "69678a2c",
+  "lockfileHash": "aaef6da8",
+  "browserHash": "4f41b92a",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "de751bfe",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "e27dbb16",
+      "needsInterop": false
+    },
+    "@angular/platform-server/init": {
+      "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/init.mjs",
+      "file": "@angular_platform-server_init.js",
+      "fileHash": "4e7a1660",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "22c1cff7",
+      "needsInterop": false
+    },
+    "@angular/ssr": {
+      "src": "../../../../../../node_modules/@angular/ssr/fesm2022/ssr.mjs",
+      "file": "@angular_ssr.js",
+      "fileHash": "e99cbc52",
+      "needsInterop": false
+    },
+    "@angular/ssr/node": {
+      "src": "../../../../../../node_modules/@angular/ssr/fesm2022/node.mjs",
+      "file": "@angular_ssr_node.js",
+      "fileHash": "0e814106",
+      "needsInterop": false
+    },
+    "express": {
+      "src": "../../../../../../node_modules/express/index.js",
+      "file": "express.js",
+      "fileHash": "6c229931",
+      "needsInterop": true
+    },
+    "zone.js/node": {
+      "src": "../../../../../../node_modules/zone.js/fesm2015/zone-node.js",
+      "file": "zone__js_node.js",
+      "fileHash": "42a7058a",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "xhr2-WBTWOK2V": {
+      "file": "xhr2-WBTWOK2V.js"
+    },
+    "chunk-4SJHSOSS": {
+      "file": "chunk-4SJHSOSS.js"
+    },
+    "chunk-YUE74NBA": {
+      "file": "chunk-YUE74NBA.js"
+    },
+    "chunk-NASUMNEO": {
+      "file": "chunk-NASUMNEO.js"
+    },
+    "chunk-JITJKFWZ": {
+      "file": "chunk-JITJKFWZ.js"
+    },
+    "chunk-YHCV7DAQ": {
+      "file": "chunk-YHCV7DAQ.js"
+    }
+  }
+}
