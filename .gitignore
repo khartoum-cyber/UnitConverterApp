@@ -5,11 +5,19 @@
 /tmp
 /out-tsc
 /bazel-out
+/src/**/*.js
+/src/**/*.js.map
+/src/**/*.d.ts
+/src/**/*.ngfactory.ts
+/src/**/*.ngsummary.json
+/src/**/*.ngstyle.ts
+/src/**/*.ngmetadata.json
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+yarn-debug.log
 
 # IDEs and editors
 .idea/
@@ -19,6 +27,8 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+/build/
+/coverage/
 
 # Visual Studio Code
 .vscode/*
@@ -36,6 +46,10 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/.env
+/.env.local
+/tmp
+/tmp/
 
 # System files
 .DS_Store
