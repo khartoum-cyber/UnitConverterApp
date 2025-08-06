@@ -1,7 +1,36 @@
 <div *ngIf="selected === 'Length'">
-    <p>converter-LENGTH-form works!</p>
+    <p>Enter the {{selected.toLowerCase()}} to convert</p>
+    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
+        <input type="number" formControlName="number" />
+        <p>Unit to convert from</p>
+        <mat-form-field>
+            <mat-label>Favorite food</mat-label>
+  <mat-select>
+    @for (food of foods; track food) {
+      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+        <!-- <input type="text" formControlName="convertFrom" /> -->
+        <p>Unit to convert to</p>
+        <input type="text" formControlName="convertTo" />
+        <button type="submit">Convert</button>
+    </form>
 </div>
 <div *ngIf="selected === 'Weight'">
-    <p>converter-WEIGHT-form works!</p>
+    <p>Enter the {{selected.toLowerCase()}} to convert</p>
+    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
+        <input type="number" formControlName="number" />
+        <p>Unit to convert from</p>
+        <input type="text" formControlName="convertFrom" />
+        <p>Unit to convert to</p>
+        <input type="text" formControlName="convertTo" />
+        <button type="submit">Convert</button>
+    </form>
 </div>
-<p *ngIf="selected === 'Temperature'">converter-TEMP-form works!</p>
+<div *ngIf="selected === 'Temperature'">
+    <p>Enter the {{selected.toLowerCase()}} to convert</p>
+    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
+        <input type="number" formControlName="number" />
+ 
