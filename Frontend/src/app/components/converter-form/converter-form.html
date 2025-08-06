@@ -33,4 +33,10 @@
     <p>Enter the {{selected.toLowerCase()}} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
         <input type="number" formControlName="number" />
- 
+        <p>Unit to convert from</p>
+        <input type="text" formControlName="convertFrom" />
+        <p>Unit to convert to</p>
+        <input type="text" formControlName="convertTo" />
+        <button type="submit">Convert</button>
+    </form>
+</div>

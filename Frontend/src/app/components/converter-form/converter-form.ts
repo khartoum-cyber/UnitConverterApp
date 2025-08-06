@@ -19,3 +19,7 @@ export class ConverterForm {
     convertTo: new FormControl(''),
   });
 
+    handleSubmit() {
+    alert(this.converterForm.value.convertFrom + ' | ' + this.converterForm.value.convertTo);
+  }
+}
