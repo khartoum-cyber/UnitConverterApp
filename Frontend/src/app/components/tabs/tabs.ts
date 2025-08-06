@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ConverterForm } from '../converter-form/converter-form';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.html',
   styleUrls: ['./tabs.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, ConverterForm]
 })
 export class TabsComponent {
   // Array of tab names

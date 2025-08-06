@@ -1,1 +1,7 @@
-<p>converter-form works!</p>
+<div *ngIf="selected === 'Length'">
+    <p>converter-LENGTH-form works!</p>
+</div>
+<div *ngIf="selected === 'Weight'">
+    <p>converter-WEIGHT-form works!</p>
+</div>
+<p *ngIf="selected === 'Temperature'">converter-TEMP-form works!</p>

@@ -10,8 +10,8 @@
 
 <div class="tab-content">
   <ng-container [ngSwitch]="selectedTab">
-    <p *ngSwitchCase="'Length'"></p>
-    <p *ngSwitchCase="'Weight'"></p>
-    <p *ngSwitchCase="'Temperature'"></p>
+    <app-converter-form *ngSwitchCase="'Length'" [selected]="selectedTab"></app-converter-form>
+    <app-converter-form *ngSwitchCase="'Weight'" [selected]="selectedTab"></app-converter-form>
+    <app-converter-form *ngSwitchCase="'Temperature'" [selected]="selectedTab"></app-converter-form>
   </ng-container>
 </div>
