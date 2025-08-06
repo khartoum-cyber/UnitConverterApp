@@ -4,14 +4,14 @@
         <input type="number" formControlName="number" />
         <p>Unit to convert from</p>
         <mat-form-field>
-            <mat-label>Favorite food</mat-label>
-  <mat-select>
-    @for (food of foods; track food) {
-      <mat-option [value]="food.value">{{food.viewValue}}</mat-option>
-    }
-  </mat-select>
-</mat-form-field>
-
+            <mat-label>Convert from</mat-label>
+            <mat-select [(value)]="unitFrom">
+            @for (unit of lengthUnits; track unit) {
+                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
+            }
+            </mat-select>
+        </mat-form-field>
+        <p>You selected: {{unitFrom}}</p>
         <!-- <input type="text" formControlName="convertFrom" /> -->
         <p>Unit to convert to</p>
         <input type="text" formControlName="convertTo" />
