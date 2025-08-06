@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/.tsbuildinfo
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/.tsbuildinfo
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/_metadata.json
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/@angular_common.js
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/@angular_common.js.map

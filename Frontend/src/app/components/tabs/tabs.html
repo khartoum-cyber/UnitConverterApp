@@ -1,1 +1,17 @@
-<p>tabs works!</p>
+<div class="tabs">
+  <ul>
+    <li *ngFor="let tab of tabs" 
+        [class.active]="tab === selectedTab" 
+        (click)="selectTab(tab)">
+      {{ tab }}
+    </li>
+  </ul>
+</div>
+
+<div class="tab-content">
+  <ng-container [ngSwitch]="selectedTab">
+    <p *ngSwitchCase="'Length'"></p>
+    <p *ngSwitchCase="'Weight'"></p>
+    <p *ngSwitchCase="'Temperature'"></p>
+  </ng-container>
+</div>
