@@ -14,7 +14,7 @@
 /src/**/*.ngmetadata.json
 
 # Node
-/node_modules
+node_modules/
 npm-debug.log
 yarn-error.log
 yarn-debug.log
@@ -50,6 +50,7 @@ testem.log
 /.env.local
 /tmp
 /tmp/
+UnitConverterClientApp/
 
 # System files
 .DS_Store
