@@ -1,4 +1,5 @@
-<div *ngIf="selected === 'Length'">
+@if(selected == 'Length'){
+<div>
     <p>Enter the {{selected.toLowerCase()}} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
         <input type="number" formControlName="number" />
@@ -12,13 +13,23 @@
             </mat-select>
         </mat-form-field>
         <p>You selected: {{unitFrom}}</p>
-        <!-- <input type="text" formControlName="convertFrom" /> -->
+
         <p>Unit to convert to</p>
-        <input type="text" formControlName="convertTo" />
+        <mat-form-field>
+            <mat-label>Convert to</mat-label>
+            <mat-select [(value)]="unitTo">
+            @for (unit of lengthUnits; track unit) {
+                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
+            }
+            </mat-select>
+        </mat-form-field>
+        <p>You selected: {{unitTo}}</p>
         <button type="submit">Convert</button>
     </form>
 </div>
-<div *ngIf="selected === 'Weight'">
+}
+@if(selected == 'Weight'){
+<div >
     <p>Enter the {{selected.toLowerCase()}} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
         <input type="number" formControlName="number" />
@@ -29,7 +40,9 @@
         <button type="submit">Convert</button>
     </form>
 </div>
-<div *ngIf="selected === 'Temperature'">
+}
+@if(selected == 'Temperature'){
+<div>
     <p>Enter the {{selected.toLowerCase()}} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
         <input type="number" formControlName="number" />
@@ -40,3 +53,4 @@
         <button type="submit">Convert</button>
     </form>
 </div>
+}
