@@ -1,4 +1,4 @@
-﻿# UnitConverterApp
+# UnitConverterApp
 
 ✅ Here's how the architecture would look:
 

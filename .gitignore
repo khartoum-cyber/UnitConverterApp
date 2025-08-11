@@ -1,8 +1,65 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-/.vs
-/bin/Debug/net8.0
-/obj
-/UnitConverterWebAPI.csproj.user
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+/src/**/*.js
+/src/**/*.js.map
+/src/**/*.d.ts
+/src/**/*.ngfactory.ts
+/src/**/*.ngsummary.json
+/src/**/*.ngstyle.ts
+/src/**/*.ngmetadata.json
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+/build/
+/coverage/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+.angular/
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+/.env
+/.env.local
+/tmp
+/tmp/
+UnitConverterClientApp/
+
+# System files
+.DS_Store
+Thumbs.db
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/.tsbuildinfo
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/.tsbuildinfo
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/_metadata.json
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/@angular_common.js
+Frontend/.angular/cache/20.1.1/UnitConverterCLientApp/vite/deps/@angular_common.js.map
+Frontend/.vscode/extensions.json
+Frontend/.vscode/launch.json
+Frontend/.vscode/tasks.json

@@ -1,0 +1,19 @@
+.converter {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+form {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+}
+
+input {
+    margin-bottom: 10px; /* Space between each input */
+}
+
+button {
+    margin-top: 10px; /* Space above the button */
+}
