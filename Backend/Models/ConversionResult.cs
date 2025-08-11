@@ -1,4 +1,4 @@
-﻿namespace UnitConverterAngular.Models
+﻿namespace UnitConverterWebAPI.Models
 {
     public class ConversionResult
     {

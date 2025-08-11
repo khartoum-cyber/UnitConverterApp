@@ -1,7 +1,7 @@
-using UnitConverterAngular.Services;
-using UnitConverterAngular.Services.Interfaces;
+using UnitConverterWebAPI.Services;
+using UnitConverterWebAPI.Services.Interfaces;
 
-namespace UnitConverterAngular
+namespace UnitConverterWebAPI
 {
     public class Program
     {

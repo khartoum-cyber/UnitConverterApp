@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using UnitConverterAngular.Models;
-using UnitConverterAngular.Services.Interfaces;
+using UnitConverterWebAPI.Models;
+using UnitConverterWebAPI.Services.Interfaces;
 
-namespace UnitConverterAngular.Controllers
+namespace UnitConverterWebAPI.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/conversion")]
     public class ConversionController : ControllerBase
     {
         private readonly IUnitConversionService _conversionService;

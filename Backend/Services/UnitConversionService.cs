@@ -1,6 +1,6 @@
-﻿using UnitConverterAngular.Services.Interfaces;
+﻿using UnitConverterWebAPI.Services.Interfaces;
 
-namespace UnitConverterAngular.Services
+namespace UnitConverterWebAPI.Services
 {
     public class UnitConversionService : IUnitConversionService
     {
@@ -22,7 +22,7 @@ namespace UnitConverterAngular.Services
                 },
                 ["Temperature"] = new Dictionary<string, Func<double, double>>
                 {
-                    ["c->f"] = value => (value * 9 / 5) + 32,
+                    ["c->f"] = value => value * 9 / 5 + 32,
                     ["f->c"] = value => (value - 32) * 5 / 9
                 }
             };

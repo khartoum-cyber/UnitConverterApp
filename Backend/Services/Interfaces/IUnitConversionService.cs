@@ -1,4 +1,4 @@
-﻿namespace UnitConverterAngular.Services.Interfaces
+﻿namespace UnitConverterWebAPI.Services.Interfaces
 {
     public interface IUnitConversionService
     {
