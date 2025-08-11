@@ -1,8 +1,15 @@
 import { Component, Input } from '@angular/core';
-
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+
+interface ConversionRequest {
+  number: number;
+  unitFrom: string;
+  unitTo: string;
+  category: string;
+}
 
 interface Units {
   value: string;
@@ -11,7 +18,7 @@ interface Units {
 
 @Component({
   selector: 'app-converter-form',
-  imports: [ReactiveFormsModule, MatSelectModule, MatFormFieldModule],
+  imports: [ ReactiveFormsModule, MatSelectModule, MatFormFieldModule],
   templateUrl: './converter-form.html',
   styleUrl: './converter-form.css'
 })
