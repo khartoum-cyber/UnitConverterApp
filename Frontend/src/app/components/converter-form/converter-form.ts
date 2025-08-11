@@ -38,19 +38,19 @@ export class ConverterForm {
     number: new FormControl(0),
   });
 
-  lengthUnits: Units[] = [
+  readonly lengthUnits: Units[] = [
     {value: 'cm', viewValue: 'Centimeters'},
     {value: 'ft', viewValue: 'Feet'},
     {value: 'm', viewValue: 'Meters'},
     {value: 'km', viewValue: 'Kilometers'},
   ];
 
-  weightUnits: Units[] = [
+  readonly weightUnits: Units[] = [
     {value: 'kg', viewValue: 'Kilograms'},
     {value: 'lb', viewValue: 'Pounds'},
   ];
 
-  temperatureUnits: Units[] = [
+  readonly temperatureUnits: Units[] = [
     {value: 'c', viewValue: 'Celsius'},
     {value: 'f', viewValue: 'Fahrenheit'},
   ];
