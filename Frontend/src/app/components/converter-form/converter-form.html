@@ -1,90 +1,30 @@
-@if(selected == 'Length'){
 <div>
-    <p>Enter the {{selected.toLowerCase()}} to convert</p>
-    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
-        <input type="number" formControlName="number" />
-        <p>Unit to convert from</p>
-        <mat-form-field>
-            <mat-label>Convert from</mat-label>
-            <mat-select [(value)]="unitFrom">
-            @for (unit of lengthUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitFrom}}</p>
+  <p>Enter the {{ selected.toLowerCase() }} to convert</p>
+  <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
+    <input type="number" formControlName="number" />
 
-        <p>Unit to convert to</p>
-        <mat-form-field>
-            <mat-label>Convert to</mat-label>
-            <mat-select [(value)]="unitTo">
-            @for (unit of lengthUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitTo}}</p>
-        <button type="submit">Convert</button>
-    </form>
-</div>
-}
-@if(selected == 'Weight'){
-<div >
-    <p>Enter the {{selected.toLowerCase()}} to convert</p>
-    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
-        <input type="number" formControlName="number" />
-        <p>Unit to convert from</p>
-        <mat-form-field>
-            <mat-label>Convert from</mat-label>
-            <mat-select [(value)]="unitFrom">
-            @for (unit of weightUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitFrom}}</p>
+    <p>Unit to convert from</p>
+    <mat-form-field>
+      <mat-label>Convert from</mat-label>
+      <mat-select [(value)]="unitFrom">
+        @for (unit of currentUnits; track unit) {
+          <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <p>You selected: {{ unitFrom }}</p>
 
-        <p>Unit to convert to</p>
-        <mat-form-field>
-            <mat-label>Convert to</mat-label>
-            <mat-select [(value)]="unitTo">
-            @for (unit of weightUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitTo}}</p>
-        <button type="submit">Convert</button>
-    </form>
-</div>
-}
-@if(selected == 'Temperature'){
-<div>
-    <p>Enter the {{selected.toLowerCase()}} to convert</p>
-    <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
-        <input type="number" formControlName="number" />
-        <p>Unit to convert from</p>
-        <mat-form-field>
-            <mat-label>Convert from</mat-label>
-            <mat-select [(value)]="unitFrom">
-            @for (unit of temperatureUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitFrom}}</p>
+    <p>Unit to convert to</p>
+    <mat-form-field>
+      <mat-label>Convert to</mat-label>
+      <mat-select [(value)]="unitTo">
+        @for (unit of currentUnits; track unit) {
+          <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <p>You selected: {{ unitTo }}</p>
 
-        <p>Unit to convert to</p>
-        <mat-form-field>
-            <mat-label>Convert to</mat-label>
-            <mat-select [(value)]="unitTo">
-            @for (unit of temperatureUnits; track unit) {
-                <mat-option [value]="unit.value">{{unit.viewValue}}</mat-option>
-            }
-            </mat-select>
-        </mat-form-field>
-        <p>You selected: {{unitTo}}</p>
-        <button type="submit">Convert</button>
-    </form>
+    <button type="submit">Convert</button>
+  </form>
 </div>
-}

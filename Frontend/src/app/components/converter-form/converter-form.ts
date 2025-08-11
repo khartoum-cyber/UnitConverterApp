@@ -18,6 +18,19 @@ interface Units {
 export class ConverterForm {
   @Input() selected!: string;
   
+  get currentUnits() {
+    switch (this.selected) {
+      case 'Length':
+        return this.lengthUnits;
+      case 'Weight':
+        return this.weightUnits;
+      case 'Temperature':
+        return this.temperatureUnits;
+      default:
+        return [];
+    }
+  }
+
   unitFrom = "";
   unitTo = "";
 
