@@ -18,7 +18,7 @@ namespace UnitConverterWebAPI.Controllers
 
         //private readonly UnitConversionService _conversionService = new UnitConversionService();
 
-        [HttpPost]
+        [HttpPost("api/conversion")]
         public ActionResult<ConversionResult> Convert([FromBody] ConversionRequest request)
         {
             try
