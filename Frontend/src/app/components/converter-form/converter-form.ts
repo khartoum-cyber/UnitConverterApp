@@ -26,9 +26,15 @@ export class ConverterForm {
   });
 
   lengthUnits: Units[] = [
-    {value: 'mm', viewValue: 'Milimeters'},
     {value: 'cm', viewValue: 'Centimeters'},
+    {value: 'ft', viewValue: 'Feet'},
     {value: 'm', viewValue: 'Meters'},
+    {value: 'km', viewValue: 'Kilometers'},
+  ];
+
+  weightUnits: Units[] = [
+    {value: 'kg', viewValue: 'Kilograms'},
+    {value: 'lb', viewValue: 'Pounds'},
   ];
 
     handleSubmit() {
