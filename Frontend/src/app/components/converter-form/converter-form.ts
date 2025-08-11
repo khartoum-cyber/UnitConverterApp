@@ -16,7 +16,7 @@ interface Units {
   styleUrl: './converter-form.css'
 })
 export class ConverterForm {
-  @Input() selected!: string;
+  @Input() selected!: 'Length' | 'Weight' | 'Temperature';
   
   get currentUnits() {
     switch (this.selected) {
