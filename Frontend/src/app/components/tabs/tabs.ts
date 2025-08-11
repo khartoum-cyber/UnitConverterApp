@@ -8,6 +8,7 @@ import { ConverterForm } from '../converter-form/converter-form';
   styleUrls: ['./tabs.css'],
   imports: [ConverterForm]
 })
+
 export class TabsComponent {
   // Array of tab names
   tabs: string[] = ['Length', 'Weight', 'Temperature'];

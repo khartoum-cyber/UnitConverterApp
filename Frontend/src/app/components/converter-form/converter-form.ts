@@ -37,6 +37,11 @@ export class ConverterForm {
     {value: 'lb', viewValue: 'Pounds'},
   ];
 
+  temperatureUnits: Units[] = [
+    {value: 'c', viewValue: 'Celsius'},
+    {value: 'f', viewValue: 'Fahrenheit'},
+  ];
+
     handleSubmit() {
     alert(this.converterForm.value.number + ' FROM ' + this.unitFrom + ' TO ' + this.unitTo);
   }
