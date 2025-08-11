@@ -9,9 +9,20 @@
 </div>
 
 <div class="tab-content">
-  <ng-container [ngSwitch]="selectedTab">
-    <app-converter-form *ngSwitchCase="'Length'" [selected]="selectedTab"></app-converter-form>
-    <app-converter-form *ngSwitchCase="'Weight'" [selected]="selectedTab"></app-converter-form>
-    <app-converter-form *ngSwitchCase="'Temperature'" [selected]="selectedTab"></app-converter-form>
+  <ng-container>
+    @switch (selectedTab) {
+      @case ('Length') {
+        <app-converter-form [selected]="selectedTab"></app-converter-form>
+      }
+      @case ('Weight') {
+        <app-converter-form [selected]="selectedTab"></app-converter-form>
+      }
+      @case ('Temperature') {
+        <app-converter-form [selected]="selectedTab"></app-converter-form>
+      }
+      @default {
+      <p>Unknown status.</p>
+      }
+    }
   </ng-container>
 </div>
