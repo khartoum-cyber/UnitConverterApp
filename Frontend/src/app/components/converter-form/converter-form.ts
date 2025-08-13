@@ -12,6 +12,13 @@ interface ConversionRequest {
   Category: string;
 }
 
+interface ConversionResult {
+  originalValue: number;
+  fromUnit: string;
+  convertedValue: number;
+  toUnit: string;
+}
+
 interface Units {
   value: string;
   viewValue: string;
@@ -73,12 +80,11 @@ export class ConverterForm {
         ToUnit: this.unitTo,
         Category: this.selected,
     };
-
     
-    this.http.post('http://localhost:5192/api/conversion', payload)
+    this.http.post<ConversionResult>('http://localhost:5192/api/conversion', payload)
         .subscribe({
-          next: response => {
-            console.log('Conversion result:', response);
+          next: (response: ConversionResult) => {
+            alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`)
             // Optionally show result to user
           },
           error: err => {
