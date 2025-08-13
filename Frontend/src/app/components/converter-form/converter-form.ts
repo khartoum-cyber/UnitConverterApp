@@ -6,10 +6,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
 
 interface ConversionRequest {
-  number: number;
-  unitFrom: string;
-  unitTo: string;
-  category: string;
+  Value: number;
+  FromUnit: string;
+  ToUnit: string;
+  Category: string;
 }
 
 interface Units {
@@ -68,10 +68,10 @@ export class ConverterForm {
 
     handleSubmit(): void {
       const payload: ConversionRequest = {
-        number: this.converterForm.value.number ?? 0,
-        unitFrom: this.unitFrom,
-        unitTo: this.unitTo,
-        category: this.selected,
+        Value: this.converterForm.value.number ?? 0,
+        FromUnit: this.unitFrom,
+        ToUnit: this.unitTo,
+        Category: this.selected,
     };
 
     
