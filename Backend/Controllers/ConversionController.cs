@@ -4,7 +4,6 @@ using UnitConverterWebAPI.Services.Interfaces;
 
 namespace UnitConverterWebAPI.Controllers
 {
-
     [ApiController]
     [Route("api/conversion")]
     public class ConversionController : ControllerBase
@@ -18,7 +17,7 @@ namespace UnitConverterWebAPI.Controllers
 
         //private readonly UnitConversionService _conversionService = new UnitConversionService();
 
-        [HttpPost("api/conversion")]
+        [HttpPost]
         public ActionResult<ConversionResult> Convert([FromBody] ConversionRequest request)
         {
             try
