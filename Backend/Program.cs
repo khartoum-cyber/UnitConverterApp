@@ -7,6 +7,8 @@ namespace UnitConverterWebAPI
     {
         public static void Main(string[] args)
         {
+            var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -18,6 +20,15 @@ namespace UnitConverterWebAPI
                     configuration.RootPath =
                         "ClientApp/dist";
                 });
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    policy =>
+                    {
+                        policy.WithOrigins("http://localhost:4200/").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
 
             builder.Services.AddScoped<IUnitConversionService, UnitConversionService>();
 
@@ -39,6 +50,8 @@ namespace UnitConverterWebAPI
             app.UseSpaStaticFiles();
 
             app.UseHttpsRedirection();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
