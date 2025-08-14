@@ -1,9 +1,9 @@
-import { Component, Input, inject  } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { HttpClient } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ConversionService } from '../../services/conversion.service';
 
 @Component({
   selector: 'app-converter-form',
@@ -12,7 +12,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './converter-form.css'
 })
 export class ConverterForm {
-  readonly http = inject(HttpClient);
+
+  readonly conversionService = inject(ConversionService);
 
   @Input() selected!: 'Length' | 'Weight' | 'Temperature';
   
@@ -61,15 +62,13 @@ export class ConverterForm {
         Category: this.selected,
     };
     
-    this.http.post<ConversionResult>('http://localhost:5192/api/conversion', payload)
-        .subscribe({
-          next: (response: ConversionResult) => {
-            alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`)
-            // Optionally show result to user
-          },
-          error: err => {
-            console.error('Error during conversion:', err);
-          }
-        });
+    this.conversionService.convert(payload).subscribe({
+      next: response => {
+        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`)
+      },
+      error: err => {
+        console.error('Error during conversion:', err);
+      }
+    });
   }
 }
