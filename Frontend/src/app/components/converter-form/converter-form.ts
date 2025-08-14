@@ -5,25 +5,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
 
-interface ConversionRequest {
-  Value: number;
-  FromUnit: string;
-  ToUnit: string;
-  Category: string;
-}
-
-interface ConversionResult {
-  originalValue: number;
-  fromUnit: string;
-  convertedValue: number;
-  toUnit: string;
-}
-
-interface Units {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-converter-form',
   imports: [ ReactiveFormsModule, MatSelectModule, MatFormFieldModule ],
@@ -72,7 +53,7 @@ export class ConverterForm {
     {value: 'f', viewValue: 'Fahrenheit'},
   ];
 
-    handleSubmit(): void {
+  handleSubmit(): void {
       const payload: ConversionRequest = {
         Value: this.converterForm.value.number ?? 0,
         FromUnit: this.unitFrom,
