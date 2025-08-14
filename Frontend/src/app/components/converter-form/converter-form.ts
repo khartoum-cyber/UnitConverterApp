@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject  } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -31,8 +31,7 @@ interface Units {
   styleUrl: './converter-form.css'
 })
 export class ConverterForm {
-  constructor(private http: HttpClient){
-  }
+  readonly http = inject(HttpClient);
 
   @Input() selected!: 'Length' | 'Weight' | 'Temperature';
   
