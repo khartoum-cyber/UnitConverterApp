@@ -17,6 +17,7 @@ export class ConverterForm {
   readonly conversionService = inject(ConversionService);
 
   conversionResult: ConversionResult | null = null;
+  formSubmitted = false;
 
   @Input() selected!: 'Length' | 'Weight' | 'Temperature';
   
@@ -67,8 +68,9 @@ export class ConverterForm {
     
     this.conversionService.convert(payload).subscribe({
       next: response => {
-        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`),
+        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`);
         this.conversionResult = response;
+        this.formSubmitted = true;
       },
       error: err => {
         console.error('Error during conversion:', err);
