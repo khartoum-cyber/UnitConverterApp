@@ -33,7 +33,7 @@ export class ConverterForm {
         return [];
     }
   }
-          
+  //todo how to reset these
   unitFrom = "";
   unitTo = "";
 
@@ -77,4 +77,10 @@ export class ConverterForm {
       }
     });
   }
+
+  resetResults(): void{
+    this.conversionResult = null;
+    this.formSubmitted = false;
+    this.converterForm.reset();
+  } 
 }
