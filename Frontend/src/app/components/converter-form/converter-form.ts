@@ -11,8 +11,8 @@ import { ConversionService } from '../../services/conversion.service';
   templateUrl: './converter-form.html',
   styleUrl: './converter-form.css'
 })
-export class ConverterForm {
 
+export class ConverterForm {
   readonly conversionService = inject(ConversionService);
 
   @Input() selected!: 'Length' | 'Weight' | 'Temperature';
