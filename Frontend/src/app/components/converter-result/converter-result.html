@@ -1,1 +1,10 @@
-<p>converter-result works!</p>
+@if ( result != null) {
+    <div>
+        <p>converter-result works!</p>
+        <p>{{ result.originalValue }} {{ result.fromUnit }} = {{ result.convertedValue }} {{ result.toUnit }}</p>
+    </div>
+} @else{
+    <div>
+        <p>result is null!</p>
+    </div>
+}

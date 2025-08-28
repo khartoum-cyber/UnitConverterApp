@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-converter-result',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './converter-result.css'
 })
 export class ConverterResult {
-
+  @Input() result!: ConversionResult | null;
 }

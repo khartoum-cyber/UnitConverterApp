@@ -4,16 +4,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ConversionService } from '../../services/conversion.service';
+import { ConverterResult } from '../converter-result/converter-result';
 
 @Component({
   selector: 'app-converter-form',
-  imports: [ ReactiveFormsModule, MatSelectModule, MatFormFieldModule ],
+  imports: [ ReactiveFormsModule, MatSelectModule, MatFormFieldModule, ConverterResult ],
   templateUrl: './converter-form.html',
   styleUrl: './converter-form.css'
 })
 
 export class ConverterForm {
   readonly conversionService = inject(ConversionService);
+
+  conversionResult: ConversionResult | null = null;
 
   @Input() selected!: 'Length' | 'Weight' | 'Temperature';
   
@@ -64,7 +67,8 @@ export class ConverterForm {
     
     this.conversionService.convert(payload).subscribe({
       next: response => {
-        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`)
+        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`),
+        this.conversionResult = response;
       },
       error: err => {
         console.error('Error during conversion:', err);
