@@ -33,12 +33,11 @@ export class ConverterForm {
         return [];
     }
   }
-  //todo how to reset these
-  unitFrom = "";
-  unitTo = "";
 
   converterForm = new FormGroup({
     number: new FormControl(0),
+    unitFrom: new FormControl(""),
+    unitTo: new FormControl("")
   });
 
   readonly lengthUnits: Units[] = [
@@ -61,8 +60,8 @@ export class ConverterForm {
   handleSubmit(): void {
       const payload: ConversionRequest = {
         Value: this.converterForm.value.number ?? 0,
-        FromUnit: this.unitFrom,
-        ToUnit: this.unitTo,
+        FromUnit: this.converterForm.value.unitFrom!,
+        ToUnit: this.converterForm.value.unitTo!,
         Category: this.selected,
     };
     

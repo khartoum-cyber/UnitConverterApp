@@ -7,24 +7,24 @@
       <p>Unit to convert from</p>
       <mat-form-field>
         <mat-label>Convert from</mat-label>
-        <mat-select [(value)]="unitFrom">
+        <mat-select [(value)]= converterForm.value.unitFrom>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-      <p>You selected: {{ unitFrom }}</p>
+      <p>You selected: {{ converterForm.value.unitFrom }}</p>
   
       <p>Unit to convert to</p>
       <mat-form-field>
         <mat-label>Convert to</mat-label>
-        <mat-select [(value)]="unitTo">
+        <mat-select [(value)]= converterForm.value.unitTo>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-      <p>You selected: {{ unitTo }}</p>
+      <p>You selected: {{ converterForm.value.unitTo }}</p>
   
       <button type="submit">Convert</button>
     </form>
