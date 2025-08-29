@@ -2,7 +2,7 @@
   <div>
     <p>Enter the {{ selected.toLowerCase() }} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
-      <input type="number" formControlName="number" />
+      <input type="number" min="0" formControlName="number" (keydown)="blockMinus($event)"/>
   
       <p>Unit to convert from</p>
       <mat-form-field>

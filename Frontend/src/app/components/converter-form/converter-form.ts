@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ConversionService } from '../../services/conversion.service';
@@ -35,7 +35,9 @@ export class ConverterForm {
   }
 
   converterForm = new FormGroup({
-    number: new FormControl(0),
+    number: new FormControl(0, [
+      Validators.pattern(/^\d+(\.\d+)?$/)
+    ]),
     unitFrom: new FormControl(""),
     unitTo: new FormControl("")
   });
@@ -81,5 +83,11 @@ export class ConverterForm {
     this.conversionResult = null;
     this.formSubmitted = false;
     this.converterForm.reset();
-  } 
+  }
+  
+  blockMinus(event: KeyboardEvent): void {
+    if (event.key === '-' || event.key === 'Minus') {
+      event.preventDefault(); // This is the key part!
+    }
+  }
 }
