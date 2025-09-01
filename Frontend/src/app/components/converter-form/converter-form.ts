@@ -87,7 +87,7 @@ export class ConverterForm {
   
   blockMinus(event: KeyboardEvent): void {
     if (event.key === '-' || event.key === 'Minus') {
-      event.preventDefault(); // This is the key part!
+      event.preventDefault();
     }
   }
 }
