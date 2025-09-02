@@ -1,9 +1,13 @@
-<div class="tabs text-black font-mono gap-4 mb-6">
-  <ul>
+<div class="flex justify-around p-2.5 text-black font-mono gap-4 mb-6 text-lg font-bold">
+  <ul class="list-none p-0 flex flex-col sm:flex-row w-full sm:w-auto">
     @for (tab of tabs; track tab) {
       <li
-        [class.active]="tab === selectedTab"
-        (click)="selectTab(tab)">
+        (click)="selectTab(tab)"
+        [ngClass]="{
+          'text-blue-600 rounded underline': tab === selectedTab,
+          'hover:underline hover:text-blue-600 transition-colors duration-300': true,
+          'px-5 py-2.5 cursor-pointer': true
+        }">
         {{ tab }}
       </li>
     }
