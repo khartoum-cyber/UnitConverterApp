@@ -2,5 +2,10 @@
 
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Caveat";
+    src: url(Caveat-SemiBold.ttf);
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Caveat"; font-weight: 800; }
