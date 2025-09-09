@@ -1,7 +1,7 @@
 @if ( result != null) {
     <div>
-        <p>converter-result works!</p>
-        <p>{{ result.originalValue }} {{ result.fromUnit }} = {{ result.convertedValue }} {{ result.toUnit }}</p>
+        <p class="p-2.5 text-black mb-2 text-xl font-bold">Result of your calculation</p>
+        <p class="p-2.5 text-black mb-2 text-2xl font-bold">{{ result.originalValue }} {{ result.fromUnit }} = {{ result.convertedValue }} {{ result.toUnit }}</p>
     </div>
 } @else{
     <div>

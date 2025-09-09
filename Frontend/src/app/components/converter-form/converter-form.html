@@ -5,7 +5,7 @@
       <input class="border-2 rounded-lg w-1/2" type="number" min="0" formControlName="number" (keydown)="blockMinus($event)"/>
   
       <div class="w-1/2 mb-4">
-      <p>Unit to convert from</p>
+        <p>Unit to convert from</p>
         <mat-select class="border-2 rounded-lg px-2 py-1 text-sm" [(value)]= converterForm.value.unitFrom>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
@@ -14,7 +14,7 @@
       </div>
   
       <div class="w-1/2 mb-4">
-      <p>Unit to convert to</p>
+        <p>Unit to convert to</p>
         <mat-select class="border-2 rounded-lg px-2 py-1 text-sm" [(value)]= converterForm.value.unitTo>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
@@ -27,5 +27,5 @@
   </div>
 } @else {
   <app-converter-result [result]="conversionResult"></app-converter-result>
-  <button type="reset" (click)="resetResults()">Reset</button>
+  <button class="border-2 rounded-lg mx-auto block w-1/2 text-xl font-bold" type="reset" (click)="resetResults()">Reset</button>
 }
