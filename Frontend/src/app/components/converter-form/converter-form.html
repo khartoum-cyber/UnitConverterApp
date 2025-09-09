@@ -1,30 +1,30 @@
 @if (!formSubmitted) {
-  <div>
+  <div class="p-2.5 text-black gap-4 mb-6 text-xl font-bold">
     <p>Enter the {{ selected.toLowerCase() }} to convert</p>
     <form [formGroup]="converterForm" (ngSubmit)="handleSubmit()">
-      <input type="number" min="0" formControlName="number" (keydown)="blockMinus($event)"/>
+      <input class="border-2 rounded-lg w-1/2" type="number" min="0" formControlName="number" (keydown)="blockMinus($event)"/>
   
       <p>Unit to convert from</p>
-      <mat-form-field>
-        <mat-label>Convert from</mat-label>
-        <mat-select [(value)]= converterForm.value.unitFrom>
+      <mat-form-field appearance="outline" class="w-1/2">
+        <!--<mat-label>Convert from</mat-label>-->
+        <mat-select class="border-2 rounded-lg px-2 py-1 text-sm" [(value)]= converterForm.value.unitFrom>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-      <p>You selected: {{ converterForm.value.unitFrom }}</p>
+      <!--<p>You selected: {{ converterForm.value.unitFrom }}</p>-->
   
       <p>Unit to convert to</p>
-      <mat-form-field>
-        <mat-label>Convert to</mat-label>
+      <mat-form-field class="w-1/2">
+        <!--<mat-label>Convert to</mat-label>-->
         <mat-select [(value)]= converterForm.value.unitTo>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
-      <p>You selected: {{ converterForm.value.unitTo }}</p>
+      <!--<p>You selected: {{ converterForm.value.unitTo }}</p>-->
   
       <button type="submit">Convert</button>
     </form>
