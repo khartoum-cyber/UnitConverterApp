@@ -1,6 +1,6 @@
 # UnitConverterApp
 
-✅ Here's how the architecture would look:
+✅ Here's the architecture:
 
 🔹 **Frontend (Angular SPA)**
 - Built with Angular (TypeScript, HTML, CSS)
@@ -18,7 +18,7 @@
 	- Business logic (e.g., conversion formulas)
 	- Unit definitions and categories (length, weight, temperature, etc.)
 	- API endpoints (e.g., /api/convert?from=kg&to=lb&value=10)
-	- Optional: user authentication, logging, database storage
+   
 ---
 🔄 How They Communicate
 
@@ -69,4 +69,48 @@ ___
 │
 ├── Program.cs
 └── UnitConverterAPI.csproj
+```
+___
+
+## Frontend (Angular SPA)
+
+```plaintext
+/frontend/
+├── /src/
+│   ├── /app/
+│   │   ├── /components/
+│   │   │   ├── /tabs/
+│   │   │   │   ├── tabs.ts         # Handles tab switching (Length, Weight,  Temp)
+│   │   │   │   ├── tabshtml
+│   │   │   │   └── tabs.css
+│   │   │   │
+│   │   │   ├── /converter-form/
+│   │   │   │   ├── converter-form.ts   # Input fields and unit selectors
+│   │   │   │   ├── converter-form.html
+│   │   │   │   └── converter-form.css
+│   │   │   │
+│   │   │   ├── /converter-result/
+│   │   │   │   ├── converter-result.ts   # Shows conversion result and reset button
+│   │   │   │   ├── converter-result.html
+│   │   │   │   └── converter-result.css
+│   │   │
+│   │   ├── /services/
+│   │   │   └── conversion.service.ts             # Handles API calls to backend
+│   │   │
+│   │   ├── /models/
+│   │   │   ├── units.model.ts					# Defines interfaces for conversion data
+│   │   │   ├── conversion-result.model.ts
+│   │   │   └── conversion-request.model.ts
+│   │   │
+│   │   ├── app.ts
+│   │   ├── app.css
+|	|	├── app.html
+|	|	├── app.config.ts
+│   │   └── app.routes.ts
+│   │
+│   └── /Caveat-SemiBold.ttf/
+│
+├── angular.json
+├── package.json
+└── tsconfig.json
 ```
