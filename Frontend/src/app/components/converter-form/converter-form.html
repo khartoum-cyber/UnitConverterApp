@@ -6,25 +6,21 @@
   
       <div class="w-1/2 mb-4">
       <p>Unit to convert from</p>
-        <!--<mat-label>Convert from</mat-label>-->
         <mat-select class="border-2 rounded-lg px-2 py-1 text-sm" [(value)]= converterForm.value.unitFrom>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </div>
-      <!--<p>You selected: {{ converterForm.value.unitFrom }}</p>-->
   
       <div class="w-1/2 mb-4">
       <p>Unit to convert to</p>
-        <!--<mat-label>Convert to</mat-label>-->
         <mat-select class="border-2 rounded-lg px-2 py-1 text-sm" [(value)]= converterForm.value.unitTo>
           @for (unit of currentUnits; track unit) {
             <mat-option [value]="unit.value">{{ unit.viewValue }}</mat-option>
           }
         </mat-select>
       </div>
-      <!--<p>You selected: {{ converterForm.value.unitTo }}</p>-->
   
       <button class="border-2 rounded-lg mx-auto block w-1/2" type="submit">Convert</button>
     </form>
