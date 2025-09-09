@@ -69,7 +69,6 @@ export class ConverterForm {
     
     this.conversionService.convert(payload).subscribe({
       next: response => {
-        alert(`Converted value: ${response.originalValue} ${response.fromUnit} to ${response.convertedValue} ${response.toUnit}`);
         this.conversionResult = response;
         this.formSubmitted = true;
       },
